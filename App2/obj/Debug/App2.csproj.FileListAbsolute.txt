@@ -1,6 +1,6 @@
-/home/admin1/Рабочий стол/C#Projects/App2/App2/bin/Debug/App2.exe
-/home/admin1/Рабочий стол/C#Projects/App2/App2/bin/Debug/App2.pdb
-/home/admin1/Рабочий стол/C#Projects/App2/App2/obj/Debug/App2.csproj.AssemblyReference.cache
-/home/admin1/Рабочий стол/C#Projects/App2/App2/obj/Debug/App2.csproj.CoreCompileInputs.cache
-/home/admin1/Рабочий стол/C#Projects/App2/App2/obj/Debug/App2.exe
-/home/admin1/Рабочий стол/C#Projects/App2/App2/obj/Debug/App2.pdb
+/home/admin1/Рабочий стол/C# Project/App2/App2/bin/Debug/App2.exe
+/home/admin1/Рабочий стол/C# Project/App2/App2/bin/Debug/App2.pdb
+/home/admin1/Рабочий стол/C# Project/App2/App2/obj/Debug/App2.csproj.AssemblyReference.cache
+/home/admin1/Рабочий стол/C# Project/App2/App2/obj/Debug/App2.csproj.CoreCompileInputs.cache
+/home/admin1/Рабочий стол/C# Project/App2/App2/obj/Debug/App2.exe
+/home/admin1/Рабочий стол/C# Project/App2/App2/obj/Debug/App2.pdb

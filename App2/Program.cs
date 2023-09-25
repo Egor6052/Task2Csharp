@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿﻿using System;
 
 namespace App2
 {
@@ -75,7 +73,7 @@ namespace App2
             int.TryParse(Console.ReadLine(), out int sizeArray);
             int[] arrayOriginal = new int[sizeArray];
 
-            Console.Write("Полученый массив: \n [ ");
+            Console.Write("Полученый массив c рандомными значениями: \n [ ");
             Random random = new();
             for (int i = 0; i < sizeArray; i++)
             {
@@ -83,26 +81,20 @@ namespace App2
                 Console.Write($"{arrayOriginal[i]}, ");
             }
 
-            Console.Write("] \nВведите цифру, на которую окончится новый массив: ");
-            int.TryParse(Console.ReadLine(), out int numberToCheck);
+            Console.Write("] \nВведите цифру, на которую будут кончаться все элементы массива: ");
+            int finalNumberOfNumbers = int.Parse(Console.ReadLine());
 
-            int[] arrayNotOriginal = arrayOriginal.Where(number => number % 10 == numberToCheck).ToArray();
-
-            if (arrayNotOriginal.Length == 0)
+            for (int i = 0; i < arrayOriginal.Length; i++)
             {
-                Console.WriteLine($"На цифру {numberToCheck} не оканчивается ни одно число массива.");
-                Console.Write("Итоговый массив пуст: \n [ ");
-            }
-            else
-            {
-                Console.Write("Итоговый массив: \n [ ");
+                arrayOriginal[i] = int.Parse(arrayOriginal[i] + finalNumberOfNumbers.ToString());
             }
 
-            foreach (int number in arrayNotOriginal)
+            // Выводим итоговый массив
+            Console.WriteLine("Итоговый массив:");
+            foreach (int number in arrayOriginal)
             {
-                Console.Write(number + ", ");
+                Console.Write($"{number}, ");
             }
-
             Console.Write("]\n");
         }
 
@@ -375,12 +367,10 @@ namespace App2
             double w = random.Next(0, 5);
             double f = random.Next(0, 5);
 
-            Console.WriteLine(
-                $"Дана функция: y = a*e^(-bx) * sin(wx + f)\nГде: a = {a}, e = {e}, b = {b}, w = {w}, f = {f};");
+            Console.WriteLine($"Дана функция: y = a*e^(-bx) * sin(wx + f)\nГде: a = {a}, e = {e}, b = {b}, w = {w}, f = {f};");
 
-            //Массивы для максимальных и минимальных аргументов;
-            List<double> maxValuesX = new List<double>();
-            List<double> minValuesX = new List<double>();
+            double[] maxValuesX = new double[0];
+            double[] minValuesX = new double[0];
 
             for (double x = 0.0; x <= 5.0; x += 0.1)
             {
@@ -391,27 +381,27 @@ namespace App2
                 // Проверка, является ли текущее значение y максимумом или минимумом;
                 if (y > y1 && y >= y2)
                 {
-                    maxValuesX.Add(x);
+                    Array.Resize(ref maxValuesX, maxValuesX.Length + 1);
+                    maxValuesX[maxValuesX.Length - 1] = x;
                     Console.WriteLine($"Максимум: x = {x}, y = {y}");
                 }
                 else if (y < y1 && y <= y2)
                 {
-                    minValuesX.Add(x);
+                    Array.Resize(ref minValuesX, minValuesX.Length + 1);
+                    minValuesX[minValuesX.Length - 1] = x;
                     Console.WriteLine($"Минимум: x = {x}, y = {y}");
                 }
             }
 
-            double[] arrayMax = maxValuesX.ToArray();
             Console.Write("Массив с максимальными значениями: [ ");
-            for (int i = 0; i < arrayMax.Length; i++)
+            for (int i = 0; i < maxValuesX.Length; i++)
             {
-                Console.Write($"{arrayMax[i]}; ");
+                Console.Write($"{maxValuesX[i]}; ");
             }
             Console.Write("]\nМассив с минимальными значениями: [ ");
-            double[] arrayMin = minValuesX.ToArray();
-            for (int i = 0; i < arrayMin.Length; i++)
+            for (int i = 0; i < minValuesX.Length; i++)
             {
-                Console.Write($"{arrayMin[i]}; ");
+                Console.Write($"{minValuesX[i]}; ");
             }
             Console.Write("]");
         }
